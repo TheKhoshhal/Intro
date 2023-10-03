@@ -1,0 +1,169 @@
+:root {
+  --main-background: #343a40;
+  --main-theme: #9775fa;
+  --secondary-theme: #343a40;
+  --third-theme: #b197fc;
+  --fold: #e5dbff;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  /* height: 100vh; */
+
+  background-color: var(--main-background);
+
+  margin: 0 auto;
+
+  padding: 1%;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  user-select: none;
+}
+
+.container {
+  height: 100%;
+  width: 100%;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+
+.btn-add {
+  border: none;
+  background: none;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: var(--main-theme);
+  font-size: 20px;
+  gap: 4px;
+
+  /* background-color: var(--main-theme); */
+  padding: 4px 10px;
+
+  border-radius: 18px;
+
+  border: 1px solid var(--main-theme);
+
+  box-shadow: 0 0 24px rgba(0, 0, 0, 0.1);
+
+  transition: all 400ms;
+
+  cursor: pointer;
+}
+
+.btn-add:hover {
+  /* color: #845ef7; */
+
+  background-color: #d0bfff11;
+}
+
+.btn-add:hover .icon--add {
+  /* stroke: #845ef7; */
+}
+
+.icon--add {
+  stroke: var(--main-theme);
+  width: 28px;
+}
+
+.notes-container {
+  height: 100%;
+  width: 100%;
+
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  column-gap: 1.5%;
+  row-gap: 4%;
+}
+
+.note {
+  height: 300px;
+  background-color: var(--third-theme);
+  opacity: 0.7;
+  border-radius: 20px;
+
+  box-shadow: 0 0 24px rgba(0, 0, 0, 0.1);
+
+  position: relative;
+}
+
+.note::before {
+  content: "";
+  position: absolute;
+  right: 0;
+  top: 0;
+
+  height: 11%;
+  width: 12%;
+
+  clip-path: polygon(0% 0%, 100% 100%, 100% 0%);
+
+  background-color: var(--main-background);
+}
+
+.note::after {
+  content: "";
+  position: absolute;
+  right: 0;
+  top: 0;
+
+  height: 11%;
+  width: 12%;
+
+  clip-path: polygon(0% 0%, 0% 100%, 100% 100%);
+
+  background-color: var(--fold);
+
+  border-bottom-left-radius: 9px;
+}
+
+.icon {
+  width: 24px;
+}
+
+.btn--form {
+  background: none;
+  border: none;
+
+  stroke: var(--secondary-theme);
+
+  cursor: pointer;
+}
+
+.note {
+  display: flex;
+  flex-direction: column;
+  gap: 3%;
+  padding: 3%;
+}
+
+.note-area {
+  height: 100%;
+  background: none;
+  outline: none;
+  border: none;
+  font-size: 14px;
+  resize: none;
+}
+
+.done {
+  position: absolute;
+  right: 15%;
+
+  transition: opacity 500ms;
+  cursor: auto;
+
+  opacity: 0;
+}
